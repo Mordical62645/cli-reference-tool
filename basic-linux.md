@@ -1,5 +1,192 @@
 # Linux Basic Commands and Scripts
 
+## What to do if starting to use Linux?
+
+### 1. Initial Setup and Orientation
+```bash
+# Check your Linux distribution
+cat /etc/os-release
+lsb_release -a
+
+# Install and use neofetch for system information
+sudo apt install neofetch  # Ubuntu/Debian
+# or
+sudo yum install neofetch  # CentOS/RHEL
+# or
+sudo dnf install neofetch  # Fedora
+
+# Display system information
+neofetch                   
+
+# Update your system (Ubuntu/Debian)
+sudo apt update && sudo apt upgrade
+
+# Update your system (CentOS/RHEL/Fedora)
+sudo yum update
+# or
+sudo dnf update
+
+# Install essential tools
+sudo apt install curl wget git vim htop tree neofetch
+```
+
+### 2. Understanding the File System
+```bash
+# Key directories to know:
+/           # Root directory
+/home/      # User home directories
+/etc/       # System configuration files
+/var/       # Variable data (logs, etc.)
+/usr/       # User programs and data
+/bin/       # Essential system binaries
+/opt/       # Optional application software
+/tmp/       # Temporary files
+```
+
+### 3. User Management Basics
+```bash
+# Check current user
+whoami
+id
+
+# Change password
+passwd
+
+# Switch user
+su - username
+
+# Add user to sudo group (Ubuntu/Debian)
+sudo usermod -aG sudo username
+
+# Add user to wheel group (CentOS/RHEL)
+sudo usermod -aG wheel username
+```
+
+### 4. Package Management
+```bash
+# Ubuntu/Debian
+sudo apt update          # Update package list
+sudo apt upgrade         # Upgrade installed packages
+sudo apt install package # Install package
+sudo apt remove package  # Remove package
+sudo apt search package  # Search for packages
+
+# CentOS/RHEL/Fedora
+sudo yum update          # Update packages
+sudo yum install package # Install package
+sudo yum remove package  # Remove package
+sudo yum search package  # Search for packages
+```
+
+### 5. File Permissions Understanding
+```bash
+# View file permissions
+ls -la
+
+# Understanding permission format: rwxrwxrwx
+# r = read, w = write, x = execute
+# First group: owner permissions
+# Second group: group permissions  
+# Third group: others permissions
+
+# Common permission numbers:
+# 755 = rwxr-xr-x (owner can read/write/execute, others can read/execute)
+# 644 = rw-r--r-- (owner can read/write, others can read only)
+# 600 = rw------- (owner can read/write, others have no access)
+```
+
+### 6. Essential Commands for Beginners
+```bash
+# Navigation
+pwd                     # Show current directory
+ls -la                 # List files with details
+cd directory           # Change directory
+cd ~                   # Go to home directory
+
+# File operations
+cp source dest         # Copy file
+mv source dest         # Move/rename file
+rm filename            # Remove file
+mkdir directory        # Create directory
+
+# Text editing
+nano filename          # Simple text editor
+vim filename           # Advanced text editor
+cat filename           # Display file contents
+
+# System information
+top                    # Process monitor
+df -h                  # Disk usage
+free -h                # Memory usage
+```
+
+### 7. Network and Internet
+```bash
+# Check network connectivity
+ping google.com
+ip addr show           # Show IP addresses
+ip route show          # Show routing table
+
+# Download files
+wget https://example.com/file
+curl -O https://example.com/file
+
+# Install software from repositories
+sudo apt install package_name
+```
+
+### 8. Troubleshooting Basics
+```bash
+# Check system logs
+sudo journalctl -f     # Follow system logs
+sudo dmesg             # Kernel messages
+
+# Check disk space
+df -h
+du -sh directory       # Directory size
+
+# Check running processes
+ps aux | grep process_name
+top                     # Interactive process viewer
+```
+
+### 9. Security Best Practices
+```bash
+# Keep system updated
+sudo apt update && sudo apt upgrade
+
+# Use strong passwords
+passwd
+
+# Don't run as root
+sudo command            # Use sudo instead of su
+
+# Check file permissions
+ls -la sensitive_file
+
+# Use firewall
+sudo ufw enable         # Ubuntu
+sudo firewall-cmd --permanent --add-service=ssh  # CentOS
+```
+
+### 10. Getting Help
+```bash
+# Command help
+command --help
+man command
+info command
+
+# System documentation
+/usr/share/doc/
+/usr/share/man/
+
+# Online resources
+# - Official distribution documentation
+# - Stack Overflow
+# - Linux forums
+# - Reddit r/linux4noobs
+```
+
 ## File System Navigation
 - `pwd` - Print working directory
 - `ls` - List files and directories
@@ -72,11 +259,22 @@
 - `sudo yum remove package` - Remove package
 - `sudo yum search package` - Search packages
 
-## Permissions
+## Permissions and Sudo
 - `chmod 755 filename` - Change file permissions
 - `chmod +x filename` - Make file executable
 - `chown user:group filename` - Change ownership
 - `sudo` - Run command as superuser
+- `sudo -i` - Start interactive shell as root
+- `sudo -u username command` - Run command as specific user
+- `sudo !!` - Run last command with sudo
+- `sudo -l` - List user's sudo privileges
+- `visudo` - Edit sudoers file safely
+- `sudo passwd username` - Change user password
+- `sudo systemctl start service` - Start system service
+- `sudo systemctl stop service` - Stop system service
+- `sudo systemctl restart service` - Restart system service
+- `sudo systemctl status service` - Check service status
+- `sudo journalctl -u service` - View service logs
 
 ## Compression and Archives
 - `tar -czf archive.tar.gz directory` - Create tar.gz archive

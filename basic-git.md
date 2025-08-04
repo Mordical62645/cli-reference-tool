@@ -441,6 +441,9 @@ When you get "fatal: refusing to merge unrelated histories", use:
 # Force merge of unrelated histories
 git pull origin main --allow-unrelated-histories
 
+Press Esc - This takes you out of INSERT mode and into normal mode
+Type :wq and press Enter - This will save the merge commit message and exit
+
 # Resolve any conflicts, then commit
 git add .
 git commit -m "Merge unrelated histories"
