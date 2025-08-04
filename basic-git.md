@@ -366,6 +366,104 @@ git filter-branch --tree-filter 'rm -f large_file' HEAD
 git push --force origin main
 ```
 
+### Non-Fast Forward Issues
+The "non-fast forward" error occurs when your local branch is behind the remote branch. Here are solutions:
+
+#### Option 1: Fetch First (Recommended Approach)
+```bash
+# First, fetch to see what's on the remote
+git fetch origin
+
+# Check what's different
+git log HEAD..origin/branch_name --oneline
+
+# See the differences
+git diff HEAD origin/branch_name
+
+# Then decide how to proceed:
+# Option A: Merge remote changes
+git merge origin/branch_name
+
+# Option B: Rebase your changes on top
+git rebase origin/branch_name
+
+# Option C: Reset to remote (loses local changes)
+git reset --hard origin/branch_name
+```
+
+#### Option 2: Pull and Merge (Quick Fix)
+```bash
+# Get latest changes and merge them
+git pull origin branch_name
+# Resolve conflicts if any
+git push origin branch_name
+```
+
+#### Option 3: Pull with Rebase
+```bash
+# Get latest changes and rebase your commits on top
+git pull --rebase origin branch_name
+# Resolve conflicts if any
+git push origin branch_name
+```
+
+#### Option 4: Force Push (Use with Caution)
+```bash
+# Only use if you're sure you want to overwrite remote changes
+git push --force origin branch_name
+
+# Safer alternative - force push only if no one else has pushed
+git push --force-with-lease origin branch_name
+```
+
+#### Option 5: Reset to Remote
+```bash
+# Completely reset your local branch to match remote
+git fetch origin
+git reset --hard origin/branch_name
+# Your local changes will be lost!
+```
+
+#### Option 6: Create New Branch with Your Changes
+```bash
+# Save your changes in a new branch
+git checkout -b backup-branch
+git checkout main
+git pull origin main
+git checkout -b new-feature-branch
+git cherry-pick backup-branch
+git push origin new-feature-branch
+```
+
+#### Option 7: Handle Unrelated Histories
+When you get "fatal: refusing to merge unrelated histories", use:
+```bash
+# Force merge of unrelated histories
+git pull origin main --allow-unrelated-histories
+
+# Resolve any conflicts, then commit
+git add .
+git commit -m "Merge unrelated histories"
+
+# Push to remote
+git push origin main
+```
+
+#### Option 8: Reset and Start Fresh
+```bash
+# Backup your current work
+git checkout -b backup-branch
+
+# Reset main to match remote
+git checkout main
+git fetch origin
+git reset --hard origin/main
+
+# Apply your changes on top
+git cherry-pick backup-branch
+# Or manually copy your changes back
+```
+
 ## Best Practices
 
 ### Commit Messages
