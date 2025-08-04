@@ -39,6 +39,8 @@
 - `git branch branch_name` - Create new branch
 - `git checkout branch_name` - Switch to branch
 - `git checkout -b branch_name` - Create and switch to new branch
+- `git branch -m old_name new_name` - Rename current branch
+- `git branch -m old_name new_name` - Rename specific branch
 - `git branch -d branch_name` - Delete branch (if merged)
 - `git branch -D branch_name` - Force delete branch
 - `git merge branch_name` - Merge branch into current branch
@@ -54,6 +56,57 @@
 - `git push origin branch_name` - Push branch to remote
 - `git push -u origin branch_name` - Push and set upstream
 - `git push --force origin branch_name` - Force push (use with caution)
+
+## Basic GitHub Workflow
+### Initial Setup
+```bash
+# Clone repository
+git clone https://github.com/username/repository.git
+cd repository
+
+# Or initialize and connect to remote
+git init
+git remote add origin https://github.com/username/repository.git
+```
+
+### Daily Workflow
+```bash
+# 1. Get latest changes
+git pull origin main
+
+# 2. Make your changes
+# ... edit files ...
+
+# 3. Stage and commit changes
+git add .
+git commit -m "feat: add new feature"
+
+# 4. Push to remote
+git push origin main
+```
+
+### Working with Branches
+```bash
+# 1. Create and switch to feature branch
+git checkout -b feature/new-feature
+
+# 2. Make changes and commit
+git add .
+git commit -m "feat: implement new feature"
+
+# 3. Push new branch to remote
+git push -u origin feature/new-feature
+
+# 4. After review, merge to main
+git checkout main
+git pull origin main
+git merge feature/new-feature
+git push origin main
+
+# 5. Clean up
+git branch -d feature/new-feature
+git push origin --delete feature/new-feature
+```
 
 ## Stashing
 - `git stash` - Stash changes temporarily
