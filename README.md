@@ -279,6 +279,62 @@ See **[basic-zsh.md](basic-zsh.md)** for comprehensive commands including:
 
 ---
 
+## GCC (GNU Compiler Collection)
+
+### What is GCC?
+GCC is a collection of compilers for various programming languages, most notably C and C++. It's the standard compiler on most Linux systems and provides extensive optimization and debugging capabilities.
+
+### Why use GCC?
+- **C/C++ Development**: Compile C and C++ programs
+- **Cross-Platform**: Available on Linux, macOS, and Windows
+- **Optimization**: Advanced optimization capabilities
+- **Debugging**: Integrated debugging support with GDB
+- **Standards Compliance**: Support for various C/C++ standards
+- **Performance**: Highly optimized generated code
+
+### When to use GCC?
+- **C/C++ Programming**: Compiling C and C++ source code
+- **System Programming**: Low-level system development
+- **Performance-Critical Applications**: Where optimization matters
+- **Cross-Platform Development**: Building for multiple platforms
+- **Embedded Systems**: Compiling for embedded devices
+- **Academic Projects**: Learning C/C++ programming
+
+### Where is GCC used?
+- **Linux Systems**: Most Linux distributions include GCC
+- **Development Environments**: IDEs and build systems
+- **Cloud Platforms**: Linux instances and containers
+- **Embedded Systems**: IoT devices and microcontrollers
+- **Academic Institutions**: Computer science education
+- **Open Source Projects**: Many projects use GCC
+
+### How to use GCC?
+See **[basic-gcc.md](basic-gcc.md)** for comprehensive commands including:
+- Installation and setup instructions
+- Basic and advanced compilation options
+- Debugging with GDB
+- Makefile examples and best practices
+
+---
+
+## Command Convention
+
+Throughout this guide, we use the following convention for user-dependent parameters:
+
+- **Square brackets `[]`** indicate user-dependent values
+- **Descriptive labels** specify the type of value expected
+
+### Examples:
+- `gcc [c filename].c -o [exe name]` - Compile C program
+- `./[exe name]` - Run compiled program
+- `git clone [repository url]` - Clone remote repository
+- `ssh [username]@[hostname]` - Connect to remote server
+- `sudo apt install [package name]` - Install package
+
+This convention helps distinguish between fixed commands and variable parameters that users need to replace with their specific values.
+
+---
+
 ## Tool Comparison and Usage Scenarios
 
 ### Development Workflow
@@ -287,6 +343,7 @@ See **[basic-zsh.md](basic-zsh.md)** for comprehensive commands including:
 3. **Zsh**: Interactive development and advanced shell features
 4. **SSH**: Remote development server access
 5. **PowerShell**: Windows-specific development tasks
+6. **GCC**: C/C++ compilation and development
 
 ### System Administration
 1. **Linux Terminal**: Linux server management
@@ -337,6 +394,7 @@ See **[basic-zsh.md](basic-zsh.md)** for comprehensive commands including:
 3. Use **Zsh** for interactive development and advanced features
 4. Use **SSH** for remote development
 5. Explore **PowerShell** for Windows development
+6. Learn **GCC** for C/C++ development and compilation
 
 ### For System Administrators
 1. Learn **Linux Terminal** for server management

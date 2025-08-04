@@ -53,13 +53,13 @@ id
 passwd
 
 # Switch user
-su - username
+su - [username]
 
 # Add user to sudo group (Ubuntu/Debian)
-sudo usermod -aG sudo username
+sudo usermod -aG sudo [username]
 
 # Add user to wheel group (CentOS/RHEL)
-sudo usermod -aG wheel username
+sudo usermod -aG wheel [username]
 ```
 
 ### 4. Package Management
@@ -100,19 +100,19 @@ ls -la
 # Navigation
 pwd                     # Show current directory
 ls -la                 # List files with details
-cd directory           # Change directory
+cd [directory]         # Change directory
 cd ~                   # Go to home directory
 
 # File operations
-cp source dest         # Copy file
-mv source dest         # Move/rename file
-rm filename            # Remove file
-mkdir directory        # Create directory
+cp [source] [dest]     # Copy file
+mv [source] [dest]     # Move/rename file
+rm [filename]          # Remove file
+mkdir [directory]      # Create directory
 
 # Text editing
-nano filename          # Simple text editor
-vim filename           # Advanced text editor
-cat filename           # Display file contents
+nano [filename]        # Simple text editor
+vim [filename]         # Advanced text editor
+cat [filename]         # Display file contents
 
 # System information
 top                    # Process monitor
@@ -143,7 +143,7 @@ sudo dmesg             # Kernel messages
 
 # Check disk space
 df -h
-du -sh directory       # Directory size
+du -sh [directory]     # Directory size
 
 # Check running processes
 ps aux | grep process_name
@@ -191,41 +191,41 @@ info command
 - `pwd` - Print working directory
 - `ls` - List files and directories
 - `ls -la` - List all files with details
-- `cd directory` - Change directory
+- `cd [directory]` - Change directory
 - `cd ..` - Go to parent directory
 - `cd ~` - Go to home directory
 - `cd /` - Go to root directory
 
 ## File Operations
-- `touch filename.txt` - Create empty file
-- `mkdir foldername` - Create directory
-- `mkdir -p parent/child` - Create nested directories
-- `cp source destination` - Copy files/directories
-- `cp -r source destination` - Copy directories recursively
-- `mv source destination` - Move/rename files
-- `rm filename` - Remove file
-- `rm -r directory` - Remove directory recursively
-- `rm -f filename` - Force remove without confirmation
+- `touch [filename.txt]` - Create empty file
+- `mkdir [foldername]` - Create directory
+- `mkdir -p [parent/child]` - Create nested directories
+- `cp [source] [destination]` - Copy files/directories
+- `cp -r [source] [destination]` - Copy directories recursively
+- `mv [source] [destination]` - Move/rename files
+- `rm [filename]` - Remove file
+- `rm -r [directory]` - Remove directory recursively
+- `rm -f [filename]` - Force remove without confirmation
 
 ## File Viewing and Editing
-- `cat filename` - Display file contents
-- `less filename` - View file with pagination
-- `head filename` - Show first 10 lines
-- `head -n 20 filename` - Show first 20 lines
-- `tail filename` - Show last 10 lines
-- `tail -f filename` - Follow file changes
-- `nano filename` - Edit file with nano
-- `vim filename` - Edit file with vim
+- `cat [filename]` - Display file contents
+- `less [filename]` - View file with pagination
+- `head [filename]` - Show first 10 lines
+- `head -n 20 [filename]` - Show first 20 lines
+- `tail [filename]` - Show last 10 lines
+- `tail -f [filename]` - Follow file changes
+- `nano [filename]` - Edit file with nano
+- `vim [filename]` - Edit file with vim
 
 ## Text Processing
-- `grep "pattern" filename` - Search for pattern in file
-- `grep -i "pattern" filename` - Case-insensitive search
-- `grep -r "pattern" directory` - Search recursively
-- `sed 's/old/new/g' filename` - Replace text
-- `awk '{print $1}' filename` - Print first column
-- `sort filename` - Sort lines
-- `uniq filename` - Remove duplicate lines
-- `wc filename` - Count lines, words, characters
+- `grep "[pattern]" [filename]` - Search for pattern in file
+- `grep -i "[pattern]" [filename]` - Case-insensitive search
+- `grep -r "[pattern]" [directory]` - Search recursively
+- `sed 's/[old]/[new]/g' [filename]` - Replace text
+- `awk '{print $1}' [filename]` - Print first column
+- `sort [filename]` - Sort lines
+- `uniq [filename]` - Remove duplicate lines
+- `wc [filename]` - Count lines, words, characters
 
 ## System Information
 - `uname -a` - System information
@@ -235,16 +235,16 @@ info command
 - `top` - Interactive process viewer
 - `htop` - Enhanced process viewer
 - `df -h` - Disk space usage
-- `du -h directory` - Directory size
+- `du -h [directory]` - Directory size
 - `free -h` - Memory usage
 
 ## Network Commands
-- `ping hostname` - Test connectivity
+- `ping [hostname]` - Test connectivity
 - `nslookup domain` - DNS lookup
 - `wget url` - Download file
 - `curl url` - Transfer data
 - `ssh user@host` - Connect via SSH
-- `scp file user@host:path` - Copy file via SSH
+- `scp [file] [user]@[host]:[path]` - Copy file via SSH
 
 ## Package Management (Ubuntu/Debian)
 - `sudo apt update` - Update package list
@@ -260,33 +260,29 @@ info command
 - `sudo yum search package` - Search packages
 
 ## Permissions and Sudo
-- `chmod 755 filename` - Change file permissions
-- `chmod +x filename` - Make file executable
-- `chown user:group filename` - Change ownership
+- `chmod 755 [filename]` - Change file permissions
+- `chmod +x [filename]` - Make file executable
+- `chown [user]:[group] [filename]` - Change ownership
 - `sudo` - Run command as superuser
 - `sudo -i` - Start interactive shell as root
-- `sudo -u username command` - Run command as specific user
+- `sudo -u [username] [command]` - Run command as specific user
 - `sudo !!` - Run last command with sudo
 - `sudo -l` - List user's sudo privileges
 - `visudo` - Edit sudoers file safely
-- `sudo passwd username` - Change user password
-- `sudo systemctl start service` - Start system service
-- `sudo systemctl stop service` - Stop system service
-- `sudo systemctl restart service` - Restart system service
-- `sudo systemctl status service` - Check service status
-- `sudo journalctl -u service` - View service logs
+- `sudo passwd [username]` - Change user password
+- `sudo systemctl start [service]` - Start system service
+- `sudo systemctl stop [service]` - Stop system service
+- `sudo systemctl restart [service]` - Restart system service
+- `sudo systemctl status [service]` - Check service status
+- `sudo journalctl -u [service]` - View service logs
 
 ## Compression and Archives
-- `tar -czf archive.tar.gz directory` - Create tar.gz archive
+- `tar -czf [archive.tar.gz] [directory]` - Create tar.gz archive
 - `tar -xzf archive.tar.gz` - Extract tar.gz archive
 - `zip archive.zip files` - Create zip archive
 - `unzip archive.zip` - Extract zip archive
 
-## Running Programs with C
-Make sure gcc is installed.
 
-- `gcc [c filename].c -o [exe name]` - Compile C program
-- `./[exe name]` - Run compiled program
 
 ## Basic Scripts
 

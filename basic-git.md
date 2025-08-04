@@ -2,12 +2,12 @@
 
 ## Getting Started
 - `git --version` - Check Git version
-- `git config --global user.name "Your Name"` - Set global username
-- `git config --global user.email "your.email@example.com"` - Set global email
+- `git config --global user.name "[Your Name]"` - Set global username
+- `git config --global user.email "[your.email@example.com]"` - Set global email
 - `git config --list` - View all Git configurations
 - `git init` - Initialize new Git repository
-- `git clone url` - Clone remote repository
-- `git clone url directory_name` - Clone to specific directory
+- `git clone [repository url]` - Clone remote repository
+- `git clone [repository url] [directory name]` - Clone to specific directory
 
 ## Repository Status
 - `git status` - Check repository status
@@ -15,58 +15,58 @@
 - `git log` - View commit history
 - `git log --oneline` - Compact commit history
 - `git log --graph --oneline --all` - Visual commit history
-- `git log -p filename` - Show changes for specific file
-- `git show commit_hash` - Show details of specific commit
+- `git log -p [filename]` - Show changes for specific file
+- `git show [commit hash]` - Show details of specific commit
 
 ## File Operations
-- `git add filename` - Stage specific file
+- `git add [filename]` - Stage specific file
 - `git add .` - Stage all changes
-- `git add *.txt` - Stage all .txt files
-- `git reset filename` - Unstage file
-- `git checkout -- filename` - Discard changes in working directory
-- `git rm filename` - Remove file from Git and working directory
-- `git mv oldname newname` - Rename file
+- `git add [*.txt]` - Stage all .txt files
+- `git reset [filename]` - Unstage file
+- `git checkout -- [filename]` - Discard changes in working directory
+- `git rm [filename]` - Remove file from Git and working directory
+- `git mv [oldname] [newname]` - Rename file
 
 ## Committing Changes
-- `git commit -m "commit message"` - Commit staged changes
-- `git commit -am "commit message"` - Stage and commit tracked files
+- `git commit -m "[commit message]"` - Commit staged changes
+- `git commit -am "[commit message]"` - Stage and commit tracked files
 - `git commit --amend` - Amend last commit
-- `git commit --amend -m "new message"` - Amend last commit with new message
+- `git commit --amend -m "[new message]"` - Amend last commit with new message
 
 ## Branching
 - `git branch` - List all branches
 - `git branch -a` - List all branches (local and remote)
-- `git branch branch_name` - Create new branch
-- `git checkout branch_name` - Switch to branch
-- `git checkout -b branch_name` - Create and switch to new branch
-- `git branch -m old_name new_name` - Rename current branch
-- `git branch -m old_name new_name` - Rename specific branch
-- `git branch -d branch_name` - Delete branch (if merged)
-- `git branch -D branch_name` - Force delete branch
-- `git merge branch_name` - Merge branch into current branch
+- `git branch [branch name]` - Create new branch
+- `git checkout [branch name]` - Switch to branch
+- `git checkout -b [branch name]` - Create and switch to new branch
+- `git branch -m [old name] [new name]` - Rename current branch
+- `git branch -m [old name] [new name]` - Rename specific branch
+- `git branch -d [branch name]` - Delete branch (if merged)
+- `git branch -D [branch name]` - Force delete branch
+- `git merge [branch name]` - Merge branch into current branch
 - `git merge --abort` - Abort merge in progress
 
 ## Remote Operations
 - `git remote -v` - List remote repositories
-- `git remote add origin url` - Add remote repository
+- `git remote add origin [repository url]` - Add remote repository
 - `git remote remove origin` - Remove remote repository
 - `git fetch origin` - Download changes from remote
-- `git pull origin branch_name` - Pull and merge changes
-- `git pull --rebase origin branch_name` - Pull with rebase
-- `git push origin branch_name` - Push branch to remote
-- `git push -u origin branch_name` - Push and set upstream
-- `git push --force origin branch_name` - Force push (use with caution)
+- `git pull origin [branch name]` - Pull and merge changes
+- `git pull --rebase origin [branch name]` - Pull with rebase
+- `git push origin [branch name]` - Push branch to remote
+- `git push -u origin [branch name]` - Push and set upstream
+- `git push --force origin [branch name]` - Force push (use with caution)
 
 ## Basic GitHub Workflow
 ### Initial Setup
 ```bash
 # Clone repository
-git clone https://github.com/username/repository.git
-cd repository
+git clone [repository url]
+cd [repository name]
 
 # Or initialize and connect to remote
 git init
-git remote add origin https://github.com/username/repository.git
+git remote add origin [repository url]
 ```
 
 ### Daily Workflow
@@ -79,7 +79,7 @@ git pull origin main
 
 # 3. Stage and commit changes
 git add .
-git commit -m "feat: add new feature"
+git commit -m "[commit message]"
 
 # 4. Push to remote
 git push origin main
@@ -88,29 +88,29 @@ git push origin main
 ### Working with Branches
 ```bash
 # 1. Create and switch to feature branch
-git checkout -b feature/new-feature
+git checkout -b [feature branch name]
 
 # 2. Make changes and commit
 git add .
-git commit -m "feat: implement new feature"
+git commit -m "[commit message]"
 
 # 3. Push new branch to remote
-git push -u origin feature/new-feature
+git push -u origin [feature branch name]
 
 # 4. After review, merge to main
 git checkout main
 git pull origin main
-git merge feature/new-feature
+git merge [feature branch name]
 git push origin main
 
 # 5. Clean up
-git branch -d feature/new-feature
-git push origin --delete feature/new-feature
+git branch -d [feature branch name]
+git push origin --delete [feature branch name]
 ```
 
 ## Stashing
 - `git stash` - Stash changes temporarily
-- `git stash save "message"` - Stash with message
+- `git stash save "[message]"` - Stash with message
 - `git stash list` - List all stashes
 - `git stash pop` - Apply and remove latest stash
 - `git stash apply stash@{n}` - Apply specific stash
@@ -119,30 +119,30 @@ git push origin --delete feature/new-feature
 
 ## Tagging
 - `git tag` - List all tags
-- `git tag tag_name` - Create lightweight tag
-- `git tag -a tag_name -m "message"` - Create annotated tag
-- `git push origin tag_name` - Push specific tag
+- `git tag [tag name]` - Create lightweight tag
+- `git tag -a [tag name] -m "[message]"` - Create annotated tag
+- `git push origin [tag name]` - Push specific tag
 - `git push origin --tags` - Push all tags
-- `git tag -d tag_name` - Delete local tag
+- `git tag -d [tag name]` - Delete local tag
 
 ## Diff and Comparison
 - `git diff` - Show unstaged changes
 - `git diff --staged` - Show staged changes
 - `git diff HEAD~1` - Compare with previous commit
-- `git diff branch1..branch2` - Compare two branches
-- `git diff commit1..commit2` - Compare two commits
+- `git diff [branch1]..[branch2]` - Compare two branches
+- `git diff [commit1]..[commit2]` - Compare two commits
 
 ## Undoing Changes
 - `git reset --soft HEAD~1` - Undo last commit, keep changes staged
 - `git reset --mixed HEAD~1` - Undo last commit, unstage changes
 - `git reset --hard HEAD~1` - Undo last commit, discard changes
-- `git revert commit_hash` - Create new commit that undoes changes
-- `git checkout commit_hash` - Checkout specific commit (detached HEAD)
-- `git checkout HEAD -- filename` - Restore file to last commit
+- `git revert [commit hash]` - Create new commit that undoes changes
+- `git checkout [commit hash]` - Checkout specific commit (detached HEAD)
+- `git checkout HEAD -- [filename]` - Restore file to last commit
 
 ## Information and Help
 - `git help command` - Get help for specific command
-- `git blame filename` - Show who changed what and when
+- `git blame [filename]` - Show who changed what and when
 - `git show-branch` - Show branch relationships
 - `git reflog` - Show reference log
 - `git shortlog` - Summarize git log output
@@ -349,7 +349,7 @@ git checkout main
 
 # Recover deleted branch
 git reflog
-git checkout -b recovered-branch commit_hash
+git checkout -b [recovered branch name] [commit hash]
 
 # Fix merge conflicts
 git status  # See conflicted files
@@ -375,52 +375,52 @@ The "non-fast forward" error occurs when your local branch is behind the remote 
 git fetch origin
 
 # Check what's different
-git log HEAD..origin/branch_name --oneline
+git log HEAD..origin/[branch name] --oneline
 
 # See the differences
-git diff HEAD origin/branch_name
+git diff HEAD origin/[branch name]
 
 # Then decide how to proceed:
 # Option A: Merge remote changes
-git merge origin/branch_name
+git merge origin/[branch name]
 
 # Option B: Rebase your changes on top
-git rebase origin/branch_name
+git rebase origin/[branch name]
 
 # Option C: Reset to remote (loses local changes)
-git reset --hard origin/branch_name
+git reset --hard origin/[branch name]
 ```
 
 #### Option 2: Pull and Merge (Quick Fix)
 ```bash
 # Get latest changes and merge them
-git pull origin branch_name
+git pull origin [branch name]
 # Resolve conflicts if any
-git push origin branch_name
+git push origin [branch name]
 ```
 
 #### Option 3: Pull with Rebase
 ```bash
 # Get latest changes and rebase your commits on top
-git pull --rebase origin branch_name
+git pull --rebase origin [branch name]
 # Resolve conflicts if any
-git push origin branch_name
+git push origin [branch name]
 ```
 
 #### Option 4: Force Push (Use with Caution)
 ```bash
 # Only use if you're sure you want to overwrite remote changes
-git push --force origin branch_name
+git push --force origin [branch name]
 
 # Safer alternative - force push only if no one else has pushed
-git push --force-with-lease origin branch_name
+git push --force-with-lease origin [branch name]
 ```
 
 #### Option 5: Reset to Remote
 ```bash
 # Completely reset your local branch to match remote
 git fetch origin
-git reset --hard origin/branch_name
+git reset --hard origin/[branch name]
 # Your local changes will be lost!
 ```
 
