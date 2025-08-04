@@ -415,24 +415,6 @@ See **[basic-zsh.md](basic-zsh.md)** for comprehensive commands including:
 - Built-in help system
 - Module system for extensions
 
-### Practical Commands
-
-```bash
-# Check your current shell
-echo $SHELL
-ps -p $$
-
-# Check available shells
-cat /etc/shells
-
-# Switch shell temporarily
-bash
-zsh
-
-# Windows equivalent
-echo %COMSPEC%
-```
-
 ---
 
 ## Best Practices
