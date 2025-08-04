@@ -368,7 +368,7 @@ See **[basic-zsh.md](basic-zsh.md)** for comprehensive commands including:
 
 **Shell (Command Interpreter):**
 - The actual program that interprets and executes commands
-- Examples: bash, zsh, fish, dash, PowerShell, CMD
+- Examples: bash, zsh, dash, PowerShell, CMD
 - Processes commands, manages environment variables
 - Can be used in different terminals
 
@@ -389,14 +389,9 @@ See **[basic-zsh.md](basic-zsh.md)** for comprehensive commands including:
 - Can run most bash scripts
 - Default on macOS since Catalina
 
-**Fish (Friendly Interactive Shell):**
-- User-friendly with smart suggestions
-- Syntax highlighting
-- Web-based configuration
-- Not fully compatible with bash scripts
-- Great for interactive use
 
-### Windows vs Linux Shells
+
+### Windows CMD vs PowerShell
 
 **Windows CMD:**
 - Basic command prompt
@@ -404,20 +399,21 @@ See **[basic-zsh.md](basic-zsh.md)** for comprehensive commands including:
 - Windows-specific commands
 - No tab completion by default
 - Legacy support
+- Uses batch files (.bat, .cmd)
+- Simple command syntax
+- Limited error handling
 
 **Windows PowerShell:**
 - Modern Windows shell
 - Object-oriented scripting
 - Powerful cmdlets
-- Better than CMD but different from Unix shells
+- Advanced tab completion
 - Cross-platform (Windows, Linux, macOS)
-
-**Linux Terminal (Bash/Zsh):**
-- Unix-like command structure
-- Powerful text processing tools
-- Extensive package ecosystem
-- Better for development and automation
-- Rich scripting capabilities
+- Uses PowerShell scripts (.ps1)
+- Rich object pipeline
+- Advanced error handling and debugging
+- Built-in help system
+- Module system for extensions
 
 ### Practical Commands
 
@@ -432,7 +428,6 @@ cat /etc/shells
 # Switch shell temporarily
 bash
 zsh
-fish
 
 # Windows equivalent
 echo %COMSPEC%
