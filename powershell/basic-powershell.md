@@ -19,6 +19,7 @@
 - `Remove-Item filename` or `rm filename` - Remove file
 - `Remove-Item directory -Recurse` - Remove directory recursively
 - `Remove-Item filename -Force` - Force remove without confirmation
+- `Get-ChildItem -Recurse -Directory | Where-Object {($_.GetFileSystemInfos().Count -eq 0)} | ForEach-Object { New-Item -Path "$($_.FullName)\filename" -ItemType File }` - fill empty folders with file (often used wih .gitkeep)
 
 ## File Viewing and Editing
 - `Get-Content filename` or `cat filename` - Display file contents
