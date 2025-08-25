@@ -13,6 +13,7 @@
 - `tree /f` - Display files in tree structure
 
 ## File Operations
+- `type nul > filename` - Create an empty file
 - `copy source destination` - Copy files
 - `copy /s source destination` - Copy directories recursively
 - `xcopy source destination /s /e` - Extended copy with subdirectories
